@@ -33,8 +33,5 @@ func (s *UserService) Login(req *user.LoginReq) (*dal.User, error) {
 }
 
 func (s *UserService) Info(id int64) (*dal.User, error) {
-	userModel := &dal.User{
-		ID: id,
-	}
-	return dal.QueryUserByID(userModel)
+	return dal.QueryUserByID(id)
 }

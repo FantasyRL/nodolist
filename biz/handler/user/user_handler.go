@@ -69,7 +69,7 @@ func Login(ctx context.Context, c *app.RequestContext) {
 // @Description show user's info
 // @Accept json/form
 // @Produce json
-// @Param Authorization header string true "token"
+// @Param Authorization header string true "Format: Bearer {token}"
 // @router /nodolist/user/ [GET]
 func Info(ctx context.Context, c *app.RequestContext) {
 	var err error

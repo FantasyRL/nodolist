@@ -1,4 +1,4 @@
-basePath: /bibi
+basePath: /nodolist
 host: localhost:8000
 info:
   contact: {}
@@ -9,13 +9,103 @@ info:
   title: NodoList
   version: "1.0"
 paths:
+  /nodolist/task/create:
+    post:
+      consumes:
+      - json/form
+      description: create a task
+      parameters:
+      - description: 标题
+        in: query
+        name: title
+        required: true
+        type: string
+      - description: 内容
+        in: query
+        name: content
+        required: true
+        type: string
+      - description: 'Format: Bearer {token}'
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: create_task
+  /nodolist/task/status:
+    get:
+      consumes:
+      - json/form
+      description: change task's status
+      parameters:
+      - description: task_id
+        in: query
+        name: id
+        required: true
+        type: integer
+      - description: 状态 0:标记为未完成;1:标记为完成
+        in: query
+        name: status
+        required: true
+        type: integer
+      - description: 'Format: Bearer {token}'
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: change_task_status
+  /nodolist/tasks/doing:
+    get:
+      consumes:
+      - json/form
+      description: show doing tasks
+      parameters:
+      - description: 页码
+        in: query
+        name: page_num
+        required: true
+        type: integer
+      - description: 'Format: Bearer {token}'
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: show_doing_tasks
+  /nodolist/tasks/done:
+    get:
+      consumes:
+      - json/form
+      description: show done tasks
+      parameters:
+      - description: 页码
+        in: query
+        name: page_num
+        required: true
+        type: integer
+      - description: 'Format: Bearer {token}'
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: show_done_tasks
   /nodolist/user/:
     get:
       consumes:
       - json/form
       description: show user's info
       parameters:
-      - description: token
+      - description: 'Format: Bearer {token}'
         in: header
         name: Authorization
         required: true

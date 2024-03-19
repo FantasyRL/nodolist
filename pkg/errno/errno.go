@@ -34,6 +34,9 @@ const (
 	Enable2FAErrCode
 	Unable2FAErrCode
 	Verify2FAErrCode
+
+	TaskNotExistErrCode
+	TaskStatusErrCode
 )
 
 const (
@@ -68,6 +71,9 @@ const (
 	WebSocketConnectErrMsg          = "Connect or upgrade error"
 	WebSocketTargetOfflineErrMsg    = "Target user is offline"
 	WebSocketErrMsg                 = "Websocket error"
+
+	TaskNotExistErrMsg = "Task not exist"
+	TaskStatusErrMsg   = "status error"
 )
 
 type ErrNo struct {
@@ -121,6 +127,9 @@ var (
 	WebSocketConnectError        = NewErrNo(WebSocketConnectErrCode, WebSocketConnectErrMsg)
 	WebSocketTargetOfflineError  = NewErrNo(WebSocketTargetOfflineErrCode, WebSocketTargetOfflineErrMsg)
 	WebSocketError               = NewErrNo(WebSocketErrCode, WebSocketErrMsg)
+
+	TaskNotExistError = NewErrNo(TaskNotExistErrCode, TaskNotExistErrMsg)
+	TaskStatusError   = NewErrNo(TaskStatusErrCode, TaskStatusErrMsg)
 )
 
 // ConvertErr convert error to ErrNo

@@ -18,7 +18,8 @@ func BuildUserResp(_user interface{}) *user.User {
 	//这里使用了一个及其抽象的断言
 	p, _ := (_user).(*dal.User)
 	return &user.User{
-		ID:   p.ID,
-		Name: p.UserName,
+		ID:        p.ID,
+		Name:      p.UserName,
+		TodoCount: dal.GetTodoCountByUid(p.ID),
 	}
 }
