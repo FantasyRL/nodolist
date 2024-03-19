@@ -44,9 +44,9 @@ func Login(ctx context.Context, userModel *User) (*User, error) {
 	return userResp, nil
 }
 
-func QueryUserByID(userModel *User) (*User, error) {
+func QueryUserByID(id int64) (*User, error) {
 	userResp := new(User)
-	if err := DB.Model(User{}).Where("id = ?", userModel.ID).First(&userResp).Error; err != nil {
+	if err := DB.Model(User{}).Where("id = ?", id).First(&userResp).Error; err != nil {
 		return nil, err
 	}
 	return userResp, nil
