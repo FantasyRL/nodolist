@@ -18,7 +18,7 @@ import (
 // @license.url   http://www.apache.org/licenses/LICENSE-2.0.html
 
 // @host      localhost:8000
-// @BasePath  /bibi
+// @BasePath  /nodolist
 func main() {
 
 	dal.Init(conf.Init())

@@ -5,7 +5,7 @@ version: '3'
 services:
   mysql:
     image: mysql:8.0.36
-    container_name: bibi
+    container_name: nodolist
     volumes:
       - ./pkg/conf/sql:/docker-entrypoint-initdb.d
       - ./pkg/data/mysql:/var/lib/mysql
