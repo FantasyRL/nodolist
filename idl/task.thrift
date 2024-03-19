@@ -1,6 +1,7 @@
 namespace go task
 
 include"user.thrift"
+include"common.thrift"
 
 struct Task{
     1:user.User user,
@@ -12,3 +13,12 @@ struct Task{
     7:string finished_at,
 }
 
+struct CreateTaskReq{
+    1:string title,
+    2:string content,
+}
+
+struct CreateTaskResp{
+    1:common.BaseResp base,
+    2:Task task,
+}
