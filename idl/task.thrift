@@ -22,3 +22,7 @@ struct CreateTaskResp{
     1:common.BaseResp base,
     2:Task task,
 }
+
+struct ShowNotDoTaskReq{
+
+}
