@@ -26,3 +26,9 @@ struct CreateTaskResp{
 struct ShowNotDoTaskReq{
 
 }
+
+struct ShowNotDoTaskResp{
+    1:common.BaseResp base,
+    2:i64 task_count,
+    3:list<Task> tasks,
+}
